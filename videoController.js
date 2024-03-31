@@ -56,8 +56,8 @@
         }
     })
     function setPlaybackrateAndChangeSpeed(){
-            selectVideo().playbackRate = playspeed
-            changeSpeed()
+      selectVideo().playbackRate = playspeed
+      if (window.location.origin.indexOf("reddit") === -1) changeSpeed()
     }
     // SPEED FUNCTIONS
     function goBack(){
@@ -155,7 +155,6 @@
     // selecting active video
     function selectVideo(){
         const videoList = getAllVideos()
-
         if(videoList.length === 1){
             // if there's only a SINGLE video
            return videoList[0]
